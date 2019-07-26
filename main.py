@@ -25,7 +25,7 @@ parser.add_argument('--by_patch_of_size', required=False, type=int, default=None
 
 
 if __name__ == '__main__':
-    print(args.fixed_proportion)
+    args = parser.parse_args()
     if args.mode == 'isr':
         rdn = load_model(args.weights)
         handle_dir(args.input_dir, args.output_dir, rdn, args.width, args.height, args.resize, args.fixed_proportion, args.padding_size, args.by_patch_of_size)
